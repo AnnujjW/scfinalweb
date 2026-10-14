@@ -1,0 +1,158 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Black and White base with Earthy Tones */
+  --bg: #FAF9F6;
+  --surface: #FFFFFF;
+  --surface-2: #F2EFE9;
+  --surface-3: #E8E4DB;
+  --text: #171614;
+  --text-muted: #6B675E;
+  --border: #DFDBD0;
+  --border-light: #EBE7DC;
+  --primary: #171614;
+  --primary-hover: #292724;
+  
+  /* Earthy Tones */
+  --accent: #9A5034;       /* Warm earthy terracotta */
+  --accent-hover: #803E26;
+  --ochre: #B87C31;        /* Earthy warm ochre */
+  --clay: #7A3E2F;         /* Earthy deep clay */
+  --sand: #D5C7B3;         /* Natural warm sand */
+  
+  /* Global tags: Forest Olive for Government, Clay Sienna for Private */
+  --gov: #2C523D;
+  --gov-bg: #EDF4F0;
+  --gov-border: #BDD1C6;
+  --private: #7A3E2F;
+  --private-bg: #F8EFEA;
+  --private-border: #DFC2B7;
+  
+  --success: #2C523D;
+  --warning: #B87C31;
+  --danger: #993333;
+}
+
+.dark {
+  /* Deep Obsidian Black with Warm Earthy Accents */
+  --bg: #0F0E0D;
+  --surface: #171615;
+  --surface-2: #21201D;
+  --surface-3: #2C2A26;
+  --text: #F6F5F2;
+  --text-muted: #9E998E;
+  --border: #2D2B26;
+  --border-light: #22201D;
+  --primary: #F6F5F2;
+  --primary-hover: #E4E2DC;
+  
+  /* Earthy Tones in Dark Mode */
+  --accent: #E08264;       /* Terracotta glow */
+  --accent-hover: #EE967A;
+  --ochre: #D99543;        /* Warm amber ochre */
+  --clay: #C47560;         /* Clay sienna */
+  --sand: #5E5649;
+  
+  /* Global tags in Dark Mode */
+  --gov: #589A76;
+  --gov-bg: #14241B;
+  --gov-border: #274735;
+  --private: #C47560;
+  --private-bg: #2B1914;
+  --private-border: #4F2B22;
+  
+  --success: #589A76;
+  --warning: #D99543;
+  --danger: #DE5A5A;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html:not(.dark) {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  transition: background-color 200ms ease, color 200ms ease;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Custom animations */
+@keyframes ticker {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes ticker-rtl {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(50%, 0, 0);
+  }
+}
+
+.animate-ticker {
+  display: flex;
+  width: max-content;
+  animation: ticker 45s linear infinite;
+  will-change: transform;
+}
+
+[dir="rtl"] .animate-ticker {
+  animation: ticker-rtl 45s linear infinite;
+}
+
+.animate-ticker:hover,
+.animate-ticker:focus-within {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-ticker {
+    animation: none !important;
+    overflow-x: auto;
+    width: 100%;
+  }
+}
+
+/* Custom scrollbar with earthy tones */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

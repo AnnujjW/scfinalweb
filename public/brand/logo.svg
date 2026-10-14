@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 44" fill="none" class="h-9 w-auto">
+  <defs>
+    <!-- Base Disc Gradient -->
+    <radialGradient id="discGrad" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#26231F" />
+      <stop offset="100%" stop-color="#141312" />
+    </radialGradient>
+
+    <!-- Infinity Ribbon Gradient -->
+    <linearGradient id="infGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5B942" />
+      <stop offset="50%" stop-color="#E08264" />
+      <stop offset="100%" stop-color="#F5B942" />
+    </linearGradient>
+
+    <!-- Cap Facets -->
+    <linearGradient id="goldCapL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE270" />
+      <stop offset="100%" stop-color="#F5B942" />
+    </linearGradient>
+    <linearGradient id="goldCapR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5A32B" />
+      <stop offset="100%" stop-color="#A86805" />
+    </linearGradient>
+
+    <style>
+      @keyframes svg-inf-float {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(1.5px, -1.2px) rotate(2deg); }
+        50% { transform: translate(0, 0) rotate(0deg); }
+        75% { transform: translate(-1.5px, -1.2px) rotate(-2deg); }
+      }
+      @keyframes svg-inf-dash {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -80; }
+      }
+      .logo-cap { animation: svg-inf-float 4.5s ease-in-out infinite; transform-origin: 22px 22px; }
+      .logo-inf { animation: svg-inf-dash 3s linear infinite; }
+    </style>
+  </defs>
+
+  <!-- Brand Icon Badge (38x38) -->
+  <g transform="translate(3, 3)">
+    <rect width="38" height="38" rx="12" fill="url(#discGrad)" stroke="#F5B942" stroke-width="1.2" />
+
+    <!-- Infinity Track -->
+    <path
+      d="M 19 19 C 15 11, 6 11, 6 19 C 6 27, 15 27, 19 19 C 23 11, 32 11, 32 19 C 32 27, 23 27, 19 19 Z"
+      stroke="#332F2A"
+      stroke-width="2.2"
+      fill="none"
+    />
+    <!-- Glowing Animated Infinity Ribbon -->
+    <path
+      class="logo-inf"
+      d="M 19 19 C 15 11, 6 11, 6 19 C 6 27, 15 27, 19 19 C 23 11, 32 11, 32 19 C 32 27, 23 27, 19 19 Z"
+      stroke="url(#infGrad)"
+      stroke-width="2.2"
+      stroke-dasharray="16 28"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Gold Bachelor Cap in Infinity Motion -->
+    <g class="logo-cap">
+      <!-- Skull Cup -->
+      <path d="M 13 17 C 13 22, 25 22, 25 17 L 19 19.5 Z" fill="#6B3E03" />
+      <!-- Diamond Top -->
+      <polygon points="19,9 9,15 19,20" fill="url(#goldCapL)" />
+      <polygon points="19,9 29,15 19,20" fill="url(#goldCapR)" />
+      <polygon points="19,9 29,15 19,20 9,15" fill="none" stroke="#FFF7C2" stroke-width="0.5" />
+      <!-- Center Pin -->
+      <circle cx="19" cy="14.5" r="1.1" fill="#FFFBE8" />
+      <!-- Golden Tassel -->
+      <path d="M 19 14.5 Q 25 15, 28.5 17.5" stroke="#FFE270" stroke-width="1" fill="none" stroke-linecap="round" />
+      <circle cx="28.5" cy="18" r="0.8" fill="#FFF4B8" />
+      <polygon points="27.5,18.5 29.5,18.5 30.5,23.5 26.5,23.5" fill="#E5A32B" />
+      <circle cx="28.5" cy="24" r="0.7" fill="#FFFFFF" />
+      <!-- Shine Sparkle -->
+      <path d="M 19 7 Q 19 9 17 9 Q 19 9 19 11 Q 19 9 21 9 Q 19 9 19 7 Z" fill="#FFFFFF" />
+    </g>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="48" y="28" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="20" fill="#171614" letter-spacing="-0.03em">
+    Scholar<tspan fill="#9A5034">Connect</tspan>
+  </text>
+</svg>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScholarConnect — Connecting Students to Scholarships</title>
+    <meta name="description" content="One verified library for government and private engineering and higher education scholarships in India. Match eligibility, track deadlines, and apply calmly." />
+    <meta property="og:title" content="ScholarConnect — Connecting Students to Scholarships" />
+    <meta property="og:description" content="One verified library for government and private engineering and higher education scholarships in India." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23191715' stroke='%23F5B942' stroke-width='1'/%3E%3Cpath d='M16 16C13 10 7 10 7 16C7 22 13 22 16 16C19 10 25 10 25 16C25 22 19 22 16 16Z' stroke='%23E08264' stroke-width='1.5' fill='none'/%3E%3Cpolygon points='16,8 8,13 16,17 24,13' fill='%23F5B942' stroke='%23FFE270' stroke-width='0.5'/%3E%3Cpath d='M11 15C11 19 21 19 21 15' fill='%23784400'/%3E%3Ccircle cx='16' cy='12.5' r='1' fill='%23FFF'/%3E%3Cpath d='M16 12.5Q21 13 23 15' stroke='%23FFD54F' stroke-width='0.8' fill='none'/%3E%3Ccircle cx='23' cy='15.5' r='0.6' fill='%23F5B942'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600&family=Noto+Nastaliq+Urdu:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('scholarconnect-theme');
+          var isDark = stored === 'dark' || ((!stored || stored === 'system') && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+          if (isDark) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.style.colorScheme = 'dark';
+            document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.style.colorScheme = 'light';
+            document.documentElement.setAttribute('data-theme', 'light');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,6 @@
+{
+  "name": "ScholarConnect",
+  "description": "Connecting Students to Scholarships — One verified library for government and private engineering and higher education scholarships with eligibility, benefits, and deadlines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
