@@ -50,6 +50,15 @@ import { ContactView } from './views/ContactView';
 import { PrivacyView } from './views/PrivacyView';
 import { NotFoundView } from './views/NotFoundView';
 
+// Base path of the site: "/scfinalweb" on GitHub Pages, "" when running locally
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Removes the base path from a URL path so the router sees "/", "/explore", etc.
+const stripBase = (p: string) => {
+  const out = BASE && p.startsWith(BASE) ? p.slice(BASE.length) : p;
+  return out || '/';
+};
+
 export default function App() {
   const [, startTransition] = useTransition();
 
@@ -70,7 +79,7 @@ export default function App() {
 
   // Client-Side Routing: current route path
   const [currentPath, setCurrentPath] = useState<string>(() => {
-    return window.location.pathname || '/';
+    return stripBase(window.location.pathname) + window.location.search;
   });
 
   // Modal / Drawer states
@@ -90,7 +99,7 @@ export default function App() {
   // Synchronize browser history / URL for client-side routing
   useEffect(() => {
     const handlePopState = () => {
-      setCurrentPath(window.location.pathname || '/');
+      setCurrentPath(stripBase(window.location.pathname) + window.location.search);
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
@@ -98,7 +107,7 @@ export default function App() {
 
   const navigateTo = (path: string) => {
     startTransition(() => {
-      window.history.pushState({}, '', path);
+      window.history.pushState({}, '', BASE + path);
       setCurrentPath(path);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
